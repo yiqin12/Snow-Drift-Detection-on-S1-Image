@@ -64,7 +64,7 @@ class SnowDrift:
         img_norm = ((img - np.nanmin(img)) / (np.nanmax(img) - np.nanmin(img) + 1e-9) * 255).astype(np.uint8)
         thresholds = threshold_multiotsu(img_norm, classes=self.n_classes)
         regions = np.digitize(img_norm, bins=thresholds)
-        self.class1_img = (regions == 1).astype(np.uint8)  # 中间类作为无雪区
+        self.class1_img = (regions == 1).astype(np.uint8)  # intermediate class as snowdrift
         # self.class1_img = img
         return self.class1_img
 
@@ -562,4 +562,5 @@ class SnowDrift:
             gdf_trails = gpd.GeoDataFrame({"type": ["trail1", "trail2"][:len(trails)]}, geometry=trails, crs=self.crs)
             geojson_path = os.path.join(self.output_path, f"{filename_prefix}_trails.geojson")
             gdf_trails.to_file(geojson_path, driver="GeoJSON")
+
             print(f"Trail results saved to: {geojson_path}")
