@@ -95,3 +95,9 @@ This folder contains:
 - **Trajectory_Results** — All ROI-level trajectory-length output images  
 - **Yi_Qin_MA_thesis_revised.pdf** — Final thesis document  
 - **Yi_Qin_1445674_Presentation_MSc._Thesis_Defense.pdf** — Defense presentation slides  
+
+---
+
+## Contact
+
+If you have questions regarding preprocessing, segmentation workflow, or modeling, please contact the author or qinyi199501@gmail.com
