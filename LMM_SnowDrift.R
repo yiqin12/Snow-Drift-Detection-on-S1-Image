@@ -73,8 +73,8 @@ m_wsRS <- lmer(trail_avg ~ wind_z + snow_z + W_z + H_z +
                data=df, REML=FALSE)
 summary(m_wsRS)
 
-# Model comparison & diagnostics断
-anova(m_int, m_wRS, m_sRS, m_wsRS)   # AIC / LRT 表
+# Model comparison & diagnostics
+anova(m_int, m_wRS, m_sRS, m_wsRS)   # AIC / LRT 
 isSingular(m_wRS); isSingular(m_sRS); isSingular(m_wsRS)
 VarCorr(m_wRS)$slot_f                # Check whether wind_z random slope variance is significant
 VarCorr(m_sRS)$slot_f                # Check whether snow_z random slope variance is close to zero
@@ -97,3 +97,4 @@ r2_nakagawa(m_rawLen)
 m_rawLen_ml <- update(m_rawLen, REML = FALSE)
 AIC(m_rawLen_ml)
 # anova(m_rawLen_ml, <another ML model object>)
+
