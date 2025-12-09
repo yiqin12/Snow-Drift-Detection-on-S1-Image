@@ -13,10 +13,15 @@ Both **Python** and **R** environments are used.
 
 ### **`S1_pre_processing.ipynb`**
 Preprocessing workflow for **Sentinel-1 GRD** products:
-- Radiometric calibration  
-- Speckle filtering  
-- Subsetting and terrain correction  
-- Export of processed backscatter images  
+- Apply Orbit File  
+- Thermal Noise Removal
+- Calibration  
+- Speckle Filtering
+- Range Doppler Terrain Correction
+- Convert to dB
+- Subset
+  
+Requires package **esa_snappy**
 
 Executed in **Jupyter Notebook**.
 
@@ -78,8 +83,6 @@ R script for performing linear mixed-effects modeling (LMM):
 
 ### **`snowdrift-env.yml`**
 Conda environment specification for running all Python components.
-
-Create and activate the environment:
 
 ---
 
